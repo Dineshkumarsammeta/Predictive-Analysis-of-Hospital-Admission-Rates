@@ -1,0 +1,6 @@
+import glob
+import pandas as pd
+
+files = sorted(glob.glob("dataset/*.csv"))
+dfs = [pd.read_csv(f) for f in files]
+df = pd.concat(dfs, ignore_index=True)
